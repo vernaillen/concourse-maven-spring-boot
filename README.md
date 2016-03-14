@@ -2,9 +2,19 @@
 
 ## Setup
 
+### Prerequisites
+
+```bash
+$ brew install git
+$ brew cask install virtualbox
+$ brew cask install vagrant
+$ brew cask install java
+```
+
 ### Setting up the VM
 
 ```bash
+$ cd ~/workspace
 $ mkdir concourse
 $ vagrant init concourse/lite
 $ vagrant up
@@ -24,14 +34,16 @@ $ fly -t lite login -c http://192.168.100.4:8080
 ### Adding the Project to Concourse
 
 ```bash
-$ cd workspace
+$ cd ~/workspace
 $ git clone https://github.com/spilth/concourse-maven-spring-boot.git
 $ cd concourse-maven-spring-boot
 $ fly -t lite set-pipeline -p concourse-maven-spring-boot -c concourse-package.yml
+$ fly -t lite unpause-pipeline -p concourse-maven-spring-boot
 ```
 
 ## Resources
 
+- <https://www.vagrantup.com/>
+- <https://www.virtualbox.org/>
 - <https://github.com/concourse/concourse>
 - <https://github.com/nitram509/concourse-java-maven-test-prj>
-- 
