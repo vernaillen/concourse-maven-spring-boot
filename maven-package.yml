@@ -12,3 +12,6 @@ inputs:
 run:
   path: "git-repo/mvnw"
   args: ["-f", "git-repo/pom.xml", "package"]
+
+params:
+  MAVEN_BASEDIR=git-repo
