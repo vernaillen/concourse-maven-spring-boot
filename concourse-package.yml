@@ -1,0 +1,21 @@
+resources:
+  - name: git-repo
+    type: git
+    source:
+      uri: https://github.com/spilth/concourse-maven-spring-boot.git
+      branch: master
+  - name: time
+    type: time
+    source:
+      interval: 60s
+
+jobs:
+  - name: maven-package
+    plan:
+    - aggregate:
+      - get: git-repo
+        trigger: true
+      - get: time
+    - task: maven-package
+      privileged: true
+      file: git-repo/maven-package.yml
