@@ -9,10 +9,6 @@ image_resource:
 inputs:
   - name: git-repo
 
-outputs:
-  - name: jar
-    path: git-repo/target/concourse-maven-spring-boot-0.0.1-SNAPSHOT.jar
-
 run:
   path: "git-repo/mvnw"
   args: ["-f", "git-repo/pom.xml", "package"]
