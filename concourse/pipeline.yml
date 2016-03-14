@@ -18,4 +18,4 @@ jobs:
       - get: schedule
     - task: package
       privileged: true
-      file: source-code/concourse/package.yml
+      file: source-code/concourse/tasks/package.yml
