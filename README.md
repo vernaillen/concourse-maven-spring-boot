@@ -37,7 +37,7 @@ $ fly -t lite login -c http://192.168.100.4:8080
 $ cd ~/workspace
 $ git clone https://github.com/spilth/concourse-maven-spring-boot.git
 $ cd concourse-maven-spring-boot
-$ fly -t lite set-pipeline -p concourse-maven-spring-boot -c concourse-package.yml
+$ fly -t lite set-pipeline -p concourse-maven-spring-boot -c concourse/pipeline.yml
 $ fly -t lite unpause-pipeline -p concourse-maven-spring-boot
 ```
 
@@ -47,17 +47,3 @@ $ fly -t lite unpause-pipeline -p concourse-maven-spring-boot
 - <https://www.virtualbox.org/>
 - <https://github.com/concourse/concourse>
 - <https://github.com/nitram509/concourse-java-maven-test-prj>
-
----
-
-```xml
-<settings>
-  <servers>
-    <server>
-      <id>nexus</id>
-      <username>deployment</username>
-      <password>deployment123</password>
-    </server>
-  </servers>
-</settings>
-```
