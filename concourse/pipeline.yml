@@ -4,18 +4,12 @@ resources:
     source:
       uri: https://github.com/spilth/concourse-maven-spring-boot.git
       branch: master
-  - name: schedule
-    type: time
-    source:
-      interval: 300s
 
 jobs:
   - name: package
     plan:
-    - aggregate:
-      - get: source-code
-        trigger: true
-      - get: schedule
+    - get: source-code
+      trigger: true
     - task: package
       privileged: true
       file: source-code/concourse/tasks/package.yml
