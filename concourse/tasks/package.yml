@@ -1,3 +1,5 @@
+platform: linux
+
 run:
   path: "source-code/mvnw"
   args: ["-f", "source-code/pom.xml", "package"]
